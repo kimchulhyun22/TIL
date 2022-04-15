@@ -1,21 +1,7 @@
+def wrong_user_display(user_metadata: dict={'name': 'john', 'age': 30}):
+    name = user_metadata.pop('name')
+    age = user_metadata.pop('age')
+    return "{} {}".format(name, age)
 
+wrong_user_display()
 
-class CallObject:
-    def __init__(self):
-        self.count = 0
-
-    def __call__(self, *args, **kwargs):
-        self.count += 1
-        args[0]()
-        return self.count
-
-
-call_object = CallObject()
-
-
-@call_object
-def test_call():
-    print('test call')
-
-
-print(test_call)
