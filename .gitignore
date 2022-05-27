@@ -5,3 +5,6 @@
 *.pyc
 
 *config.py
+
+csv/
+*.csv
