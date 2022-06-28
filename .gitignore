@@ -8,3 +8,9 @@
 
 csv/
 *.csv
+
+*venv/
+
+*key.json
+
+*.env
