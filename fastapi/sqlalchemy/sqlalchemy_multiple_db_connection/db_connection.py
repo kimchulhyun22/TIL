@@ -9,9 +9,7 @@ Session = sessionmaker()
 
 Base = declarative_base()
 
-engine = create_engine(
-    "mysql+pymysql://neubility:neubility@monitoring-database-dev.cfpdcop7a57p.ap-northeast-2.rds.amazonaws.com:3306"
-)
+engine = create_engine("mysql+pymysql://{USER_NAME}:{PASSWORD}@{HOST}:{PORT}")
 
 Base.metadata.bind = engine
 
