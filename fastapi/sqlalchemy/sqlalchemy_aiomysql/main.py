@@ -27,8 +27,6 @@ async def async_db_test():
 
     await asyncio.gather(test1(session), test2(session))
 
-    await asyncio.gather(test1(session), test2(session))
-
     await session.commit()
     await session.close()
 
@@ -48,5 +46,9 @@ async def test2(session):
 
 
 if __name__ == "__main__":
-    asyncio.run(async_db_test())
-    asyncio.run(async_db_test())
+    loop = asyncio.get_event_loop()
+
+    loop.run_until_complete(async_db_test())
+    loop.run_until_complete(async_db_test())
+
+    loop.close()
